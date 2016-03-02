@@ -1,12 +1,10 @@
 package com.metafour.testAuto;
 
+import static org.junit.Assert.*;
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import static org.junit.Assert.*;
 
 public class AppTest {
   private WebDriver driver;
@@ -22,7 +20,7 @@ public class AppTest {
 
   @Test
   public void test01() throws Exception {
-    driver.get("http://ncpg-test1.metafour.lan/online/");
+    driver.get("http://ncpg-dev1.metafour.lan/online/");
     assertTrue(isElementPresent(By.xpath("//form[@id='mainform']//h2[contains(text(),'Login')]")));
     assertTrue(isElementPresent(By.id("access_code")));
     assertTrue(isElementPresent(By.id("login")));

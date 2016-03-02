@@ -13,9 +13,9 @@ public class AppTest {
 
   @Before
   public void setUp() throws Exception {
-    driver = new FirefoxDriver();
-    baseUrl = "http://192.168.0.175/";
-    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	  driver = new FirefoxDriver();
+	  baseUrl = "http://192.168.0.175/";
+	  driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
   @Test
@@ -25,11 +25,11 @@ public class AppTest {
     assertTrue(isElementPresent(By.id("access_code")));
     assertTrue(isElementPresent(By.id("login")));
     driver.findElement(By.id("access_code")).clear();
-    driver.findElement(By.id("access_code")).sendKeys("TESTCL01");
+    driver.findElement(By.id("access_code")).sendKeys("SITEST");
     driver.findElement(By.id("login")).clear();
-    driver.findElement(By.id("login")).sendKeys("testus01");
+    driver.findElement(By.id("login")).sendKeys("sanjoy");
     driver.findElement(By.name("j_password")).clear();
-    driver.findElement(By.name("j_password")).sendKeys("testus01");
+    driver.findElement(By.name("j_password")).sendKeys("sanjoy123");
     driver.findElement(By.xpath("//button[@type='submit']")).click();
     assertEquals("Online booking", driver.getTitle());
     assertTrue(isElementPresent(By.xpath("//section[@id='booking']")));
